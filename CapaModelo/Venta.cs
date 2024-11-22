@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,11 +22,19 @@ namespace CapaModelo
         San_Miguel = 3
     }
 
+    [Table(name: "Ventas")]
     public class Venta
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int VentaId { get; set; }
-        public DateTime Fecha { get; set; }
+        [Column(name: "fecha_venta")]
+        public DateTime Fecha { get; set; } = DateTime.Now;
+        [Column(name: "vendedor_venta")]
+        [Required]
         public Vendedores Vendedor { get; set; }
+        [Column(name: "total_venta")]
+        [Required]
         public decimal Total { get; set; }
 
         // relacionar el Cliente
