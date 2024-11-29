@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TiendaApp.Productos;
 
 namespace TiendaApp
 {
@@ -15,6 +16,13 @@ namespace TiendaApp
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void agregarProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Muestre la ventana AgregarProductos
+            AgregarProducto objProducto = new AgregarProducto();
+            objProducto.ShowDialog();
         }
     }
 }

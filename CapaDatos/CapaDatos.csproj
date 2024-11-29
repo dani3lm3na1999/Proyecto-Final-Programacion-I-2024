@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoriaDAL.cs" />
     <Compile Include="Migrations\202411220133491_Iniciar-Catalogo.cs" />
     <Compile Include="Migrations\202411220133491_Iniciar-Catalogo.Designer.cs">
       <DependentUpon>202411220133491_Iniciar-Catalogo.cs</DependentUpon>
