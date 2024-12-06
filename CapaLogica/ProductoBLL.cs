@@ -13,6 +13,14 @@ namespace CapaLogica
         // Crear una instancia a mi clase ProductoDAL privada
         private ProductoDAL _productoDAL;
 
+
+        public void Eliminar(int productoId)
+        {
+            _productoDAL = new ProductoDAL();
+
+            _productoDAL.Eliminar(productoId);
+        }
+
         // Nuestro método para guardar y actualizar desde nuestra capa BLL
         public int Guardar(Producto producto, int id = 0, bool esActuaizacion = false)
         {

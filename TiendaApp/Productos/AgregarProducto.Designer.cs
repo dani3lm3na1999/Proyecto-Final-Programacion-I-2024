@@ -63,6 +63,8 @@
             this.pnlBotones = new System.Windows.Forms.Panel();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.grbProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.marcaBindingSource)).BeginInit();
@@ -73,6 +75,8 @@
             // 
             // grbProducto
             // 
+            this.grbProducto.Controls.Add(this.txtId);
+            this.grbProducto.Controls.Add(this.label9);
             this.grbProducto.Controls.Add(this.btnCancelar);
             this.grbProducto.Controls.Add(this.btnGuardar);
             this.grbProducto.Controls.Add(this.cbxProveedores);
@@ -379,6 +383,7 @@
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
@@ -388,6 +393,25 @@
             this.btnEditar.TabIndex = 2;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(13, 23);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(19, 13);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Id:";
+            // 
+            // txtId
+            // 
+            this.txtId.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productoBindingSource, "ProductoId", true));
+            this.txtId.Location = new System.Drawing.Point(105, 20);
+            this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
+            this.txtId.Size = new System.Drawing.Size(100, 20);
+            this.txtId.TabIndex = 17;
             // 
             // AgregarProducto
             // 
@@ -449,5 +473,7 @@
         private System.Windows.Forms.Panel pnlBotones;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Label label9;
     }
 }

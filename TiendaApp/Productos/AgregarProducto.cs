@@ -105,17 +105,32 @@ namespace TiendaApp.Productos
             Producto producto = (Producto)productoBindingSource.Current;
             producto.Proveedor = (Proveedores)cbxProveedores.SelectedValue;
 
-            int resultado = _prdBLL.Guardar(producto);
-
-            if (resultado > 0)
+            if (producto.ProductoId > 0)
             {
-                MessageBox.Show("Producto agregado con exito");
+                int resultado = _prdBLL.Guardar(producto, int.Parse(txtId.Text), true);
+
+                if (resultado > 0)
+                {
+                    MessageBox.Show("Producto actualizado con exito");
+                }
+                else
+                {
+                    MessageBox.Show("No se logro actualizar el producto");
+                }
             }
             else
             {
-                MessageBox.Show("No se logro agregar el producto");
-            }
+                int resultado = _prdBLL.Guardar(producto);
 
+                if (resultado > 0)
+                {
+                    MessageBox.Show("Producto agregado con exito");
+                }
+                else
+                {
+                    MessageBox.Show("No se logro agregar el producto");
+                }
+            }
 
             grbProducto.Enabled = false;
             pnlBotones.Enabled = true;
@@ -128,6 +143,34 @@ namespace TiendaApp.Productos
             {
                 categoriaBindingSource.Position = cbxCategoria.SelectedIndex;
                 CargarMarcas();
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            grbProducto.Enabled = true;
+            pnlBotones.Enabled = false;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            _prdBLL = new ProductoBLL();
+
+            Producto producto = (Producto)productoBindingSource.Current;
+
+            if (producto != null)
+            {
+                DialogResult dialogo = MessageBox.Show($"¿Está seguro que desea eliminar el producto" +
+                    $" {producto.Nombre}?", "Tienda | Eliminar Producto", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dialogo == DialogResult.Yes)
+                {
+                    _prdBLL.Eliminar(producto.ProductoId);
+
+                    MessageBox.Show("Producto eliminado con exito");
+                }
+
+                CargarProductos();
             }
         }
     }

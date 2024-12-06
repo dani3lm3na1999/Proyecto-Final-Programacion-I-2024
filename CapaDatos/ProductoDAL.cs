@@ -13,6 +13,20 @@ namespace CapaDatos
         // Crear una instancia privada de nuestro DbContext
         private TiendaDbContext _db;
 
+
+        public void Eliminar(int productoId)
+        {
+            _db = new TiendaDbContext();
+
+            Producto producto = _db.Productos.Find(productoId);
+
+            if (producto != null)
+            {
+                _db.Productos.Remove(producto);
+                _db.SaveChanges();
+            }            
+        }
+
         // Crear un método que nos ayude a crear y actualizar un producto
         public int Guardar(Producto producto, int id = 0, bool esActualizacion = false)
         {
