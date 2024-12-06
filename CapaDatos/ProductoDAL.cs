@@ -40,5 +40,13 @@ namespace CapaDatos
 
             return resultado;
         }
+
+        // Método para obtener el listado de productos
+        public List<Producto> ObtenerTodo()
+        {
+            _db = new TiendaDbContext();
+
+            return _db.Productos.ToList();
+        }
     }
 }

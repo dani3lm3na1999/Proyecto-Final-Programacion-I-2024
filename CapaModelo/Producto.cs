@@ -11,7 +11,7 @@ namespace CapaModelo
     public enum Proveedores
     {
         Jose_Iraheta = 1,
-        Marcoles_Solis = 2,
+        Marco_Solis = 2,
         Karla_Mejia = 3
     }
     [Table(name: "Productos")]

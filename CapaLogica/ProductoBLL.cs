@@ -22,5 +22,13 @@ namespace CapaLogica
             // Retornar el valor
             return _productoDAL.Guardar(producto, id, esActuaizacion);
         }
+
+        // Crear un método para obtener todos los productos
+        public List<Producto> ObtenerTodo()
+        {
+            _productoDAL = new ProductoDAL();
+
+            return _productoDAL.ObtenerTodo();
+        }
     }
 }

@@ -32,7 +32,6 @@
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listadoProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,8 +55,7 @@
             // productosToolStripMenuItem
             // 
             this.productosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarProductoToolStripMenuItem,
-            this.listadoProductosToolStripMenuItem});
+            this.agregarProductoToolStripMenuItem});
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
             this.productosToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.productosToolStripMenuItem.Text = "Productos";
@@ -65,15 +63,9 @@
             // agregarProductoToolStripMenuItem
             // 
             this.agregarProductoToolStripMenuItem.Name = "agregarProductoToolStripMenuItem";
-            this.agregarProductoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.agregarProductoToolStripMenuItem.Text = "Agregar Producto";
+            this.agregarProductoToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
+            this.agregarProductoToolStripMenuItem.Text = "Mantenimiento de Productos";
             this.agregarProductoToolStripMenuItem.Click += new System.EventHandler(this.agregarProductoToolStripMenuItem_Click);
-            // 
-            // listadoProductosToolStripMenuItem
-            // 
-            this.listadoProductosToolStripMenuItem.Name = "listadoProductosToolStripMenuItem";
-            this.listadoProductosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.listadoProductosToolStripMenuItem.Text = "Listado Productos";
             // 
             // Form1
             // 
@@ -98,7 +90,6 @@
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarProductoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listadoProductosToolStripMenuItem;
     }
 }
 
